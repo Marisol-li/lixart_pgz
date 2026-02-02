@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lixart Academy</title>
+    <link rel="icon" type="image/png" href="favi1.png">
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+    <div class="sidebar-decor"></div>
+
+    <main class="main-container">
+        <header class="header reveal">
+            <div class="brand">
+                <div class="logo-container">
+                    <img src="favi1.png" alt="Logo Lixart" class="main-logo">
+                </div>
+                <div class="brand-text">
+                    <h1 class="shiny-text">LIXART ACADEMY</h1>
+                    <p>3D DESIGN & TOOLS</p>
+                </div>
+            </div>
+
+            <div class="social-handle">
+                <a href="https://www.instagram.com/lixart_pgz?igsh=NG1vZ2pkd3lodDM4&utm_source=qr" target="_blank" class="social-link">
+                    <div class="icon-wrapper">
+                        <img src="insta.png" alt="Instagram Negro" class="social-icon icon-black">
+                        <img src="insta_ama.png" alt="Instagram Amarillo" class="social-icon icon-yellow">
+                    </div>
+                    <span>@lixart_pgz</span>
+                </a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <div class="character-container floating">
+                    <img src="3D_perso.png" alt="3D Character" class="hero-image">
+                </div>
+                <div class="text-group reveal-bottom">
+                    <h2 class="outline-text wave-text single-line">
+                        <span class="word"><span>L</span><span>E</span><span>A</span><span>R</span><span>N</span></span>
+                        <span class="word"><span>W</span><span>I</span><span>T</span><span>H</span></span>
+                        <span class="word"><span>M</span><span>E</span></span>
+                    </h2>
+                    <h3 class="sub-title">De estudiantes a artistas</h3>
+                    <p class="description">Transforma tu creatividad. Cursos completos para cualquier nivel.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="service-item reveal" onclick="openModal('modal-modelado')" style="animation-delay: 0.2s; cursor: pointer;">
+                <div class="icon-circle">
+                    <img src="lapp.png" alt="Modelado" class="service-icon">
+                </div>
+                <p>MODELADO</p>
+            </div>
+            <div class="service-item reveal" onclick="openModal('modal-animacion')" style="animation-delay: 0.4s; cursor: pointer;">
+                <div class="icon-circle">
+                    <img src="patou.png" alt="Animación" class="service-icon">
+                </div>
+                <p>ANIMACIÓN</p>
+            </div>
+            <div class="service-item reveal" onclick="openModal('modal-render')" style="animation-delay: 0.6s; cursor: pointer;">
+                <div class="icon-circle">
+                    <img src="camm.png" alt="Render" class="service-icon">
+                </div>
+                <p>RENDER</p>
+            </div>
+        </section>
+
+        <footer class="footer reveal-bottom">
+            <div class="about">
+                <h4>SOBRE NOSOTROS</h4>
+                <div class="cards-stack" id="aboutStack">
+                    <div class="about-card active">
+                        <p class="description-about">
+                            En <strong>Lixart Academy</strong>, no solo enseñamos software; formamos la próxima generación de creadores digitales.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <p class="description-about">
+                            Nacimos de la pasión por el 3D y la convicción de que el arte de alto nivel debe ser práctico e inspirador.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <p class="description-about">
+                            Aprende a transformar tus ideas en realidad con metodologías aplicadas a la industria actual.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form" id="contacto">
+                <h4>CONTACTO & INSCRIPCIÓN</h4>
+                <form>
+                    <div class="form-row">
+                        <input type="text" placeholder="Nombre">
+                        <textarea placeholder="Mensaje"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="curso-input" placeholder="Curso interesado">
+                        <button type="submit" class="btn-submit">SOLICITAR INFO</button>
+                    </div>
+                </form>
+            </div>
+        </footer>
+
+        <div class="floating-asset asset-1"><img src="logo_blac.png" alt="decor"></div>
+        <div class="floating-asset asset-2"><img src="logo_blac.png" alt="decor"></div>
+        <div class="floating-asset asset-3"><img src="logo_blac.png" alt="decor"></div>
+        <div class="floating-asset asset-4"><img src="logo_blac.png" alt="decor"></div>
+    </main>
+
+    <div id="modal-modelado" class="modal-overlay" onclick="closeModal(event, 'modal-modelado')">
+        <div class="modal-content">
+            <div class="modal-character-container">
+                <img src="bled.png" alt="Modelado Character" class="modal-char-img">
+            </div>
+            <span class="close-btn" onclick="forceClose('modal-modelado')">&times;</span>
+            <div class="modal-header"><h2>MODELADO 3D</h2></div>
+            <div class="modal-body">
+                <p>Aprende a crear personajes y escenarios desde cero. Dominarás herramientas profesionales para esculpido y topología de alto nivel.</p>
+                <a href="#contacto" class="btn-submit-link" onclick="forceClose('modal-modelado')">MÁS INFORMACIÓN</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-animacion" class="modal-overlay" onclick="closeModal(event, 'modal-animacion')">
+        <div class="modal-content">
+            <div class="modal-character-container">
+                <img src="ppppa.png" alt="Animación Character" class="modal-char-img">
+            </div>
+            <span class="close-btn" onclick="forceClose('modal-animacion')">&times;</span>
+            <div class="modal-header"><h2>ANIMACIÓN</h2></div>
+            <div class="modal-body">
+                <p>Dale vida a tus creaciones. Aprenderás principios de movimiento, rigging y actuación de personajes para producciones profesionales.</p>
+                <a href="#contacto" class="btn-submit-link" onclick="forceClose('modal-animacion')">MÁS INFORMACIÓN</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-render" class="modal-overlay" onclick="closeModal(event, 'modal-render')">
+        <div class="modal-content">
+            <div class="modal-character-container">
+                <img src="persona.png" alt="Render Character" class="modal-char-img">
+            </div>
+            <span class="close-btn" onclick="forceClose('modal-render')">&times;</span>
+            <div class="modal-header"><h2>RENDER & LUZ</h2></div>
+            <div class="modal-body">
+                <p>Domina la luz y los materiales. Aprende a crear renders realistas e impactantes que harán destacar tu portafolio.</p>
+                <a href="#contacto" class="btn-submit-link" onclick="forceClose('modal-render')">MÁS INFORMACIÓN</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(event, id) {
+            if (event.target.classList.contains('modal-overlay')) { forceClose(id); }
+        }
+        function forceClose(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        function initParticles() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 160; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 3.5 + 1,
+                    speedY: Math.random() * 0.4 + 0.1,
+                    opacity: Math.random() * 0.4 + 0.2
+                });
+            }
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+                p.y -= p.speedY;
+                if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
+            });
+            requestAnimationFrame(animate);
+        }
+        window.addEventListener('resize', initParticles);
+        initParticles(); animate();
+
+        const stack = document.getElementById('aboutStack');
+        const cards = document.querySelectorAll('.about-card');
+        let currentCard = 0;
+        stack.addEventListener('click', () => {
+            const exitingCard = cards[currentCard];
+            exitingCard.classList.remove('active');
+            exitingCard.style.transform = "translateY(-120%) rotate(-10deg)";
+            exitingCard.style.opacity = "0";
+            currentCard = (currentCard + 1) % cards.length;
+            cards[currentCard].classList.add('active');
+            setTimeout(() => {
+                if (!exitingCard.classList.contains('active')) {
+                    exitingCard.style.transform = ""; exitingCard.style.opacity = "";
+                }
+            }, 500);
+        });
+
+        const sidebar = document.querySelector('.sidebar-decor');
+        const heroPerso = document.querySelector('.hero-image');
+
+        function triggerSparks(e, element) {
+            const x = e.clientX || (e.touches && e.touches[0].clientX);
+            const y = e.clientY || (e.touches && e.touches[0].clientY);
+            
+            for (let i = 0; i < 15; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'spark';
+                spark.style.left = `${x}px`;
+                spark.style.top = `${y}px`;
+                const dx = (Math.random() - 0.5) * 200;
+                const dy = (Math.random() - 0.5) * 200;
+                spark.style.setProperty('--dx', `${dx}px`);
+                spark.style.setProperty('--dy', `${dy}px`);
+                document.body.appendChild(spark);
+                setTimeout(() => spark.remove(), 800);
+            }
+            element.style.transform = "scale(0.95)";
+            setTimeout(() => element.style.transform = "", 100);
+        }
+
+        sidebar.addEventListener('mousedown', (e) => triggerSparks(e, sidebar));
+        heroPerso.addEventListener('mousedown', (e) => triggerSparks(e, heroPerso));
+        sidebar.addEventListener('touchstart', (e) => triggerSparks(e, sidebar), {passive: true});
+        heroPerso.addEventListener('touchstart', (e) => triggerSparks(e, heroPerso), {passive: true});
+
+        const waveText = document.querySelector('.wave-text');
+        const startWave = () => waveText.classList.add('active');
+        const stopWave = () => setTimeout(() => waveText.classList.remove('active'), 1000);
+        waveText.addEventListener('mouseenter', startWave);
+        waveText.addEventListener('mouseleave', stopWave);
+        waveText.addEventListener('touchstart', startWave);
+        waveText.addEventListener('touchend', stopWave);
+    </script>
+</body>
+</html>
